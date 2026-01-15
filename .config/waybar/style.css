@@ -1,0 +1,159 @@
+@import url('/home/puyon/.cache/wal/colors-waybar.css');
+
+* {
+    border: none;
+    border-radius: 0;
+    font-size:15px;
+    font-family: "JetBrains Mono Nerd Font", "Noto Sans Mono", monospace;
+    min-height: 0;
+    font-weight: 500;
+}
+
+window#waybar{
+    background-color: transparent;
+    color: #ffffff;
+    opacity: .75;
+}
+
+.modules-center,
+.modules-left,
+.modules-right {
+    padding: 8px 20px;
+    margin: 0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+}
+
+.modules-left {
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.modules-center {
+    background-color: transparent;
+    margin: 0;
+}
+.modules-right {
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+#custom-notification,
+#pulseaudio,
+#bluetooth,
+#network,
+#custom-clock,
+#tray,
+#custom-arch-logo {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 2px 6px;
+    margin: 0 2px;
+}
+
+/* Custom notification module */
+#custom-notification {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* Pulseaudio module */
+#pulseaudio {
+    color: #ffffff;
+}
+
+#pulseaudio.muted {
+    color: #888888;
+}
+
+#pulseaudio-microphone {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+#pulseaudio-microphone.muted {
+    color: #888888;
+}
+
+/* Bluetooth module */
+#bluetooth {
+    color: #ffffff;
+}
+
+#bluetooth.disabled {
+    color: #888888;
+}
+
+/* Network module */
+#network {
+    color: #ffffff;
+}
+
+#network.disconnected {
+    color: #888888;
+}
+
+/* Custom clock module */
+#custom-clock {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Tray module */
+#tray {
+    color: #ffffff;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-arch-logo:hover {
+    color: rgba(255, 255, 255, 0.05);
+}
+
+/* Dynamic Island Clock Styling */
+#clock {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 8px 20px;
+    margin: 0 0 0 0;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#clock:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#clock:active {
+}
+
+/* Hover effects */
+#custom-notification:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover {
+    color: rgba(255, 255, 255, 0.05);
+}
+
+/* Tooltip styling */
+tooltip {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+}
+
+tooltip label {
+    color: #ffffff;
+}

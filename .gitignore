@@ -1,0 +1,128 @@
+# Dotfiles .gitignore
+# Ignore everything by default, then whitelist specific files
+
+# Ignore everything
+*
+
+# Don't ignore .gitignore itself
+!.gitignore
+
+# ===========================================
+# Shell Configurations
+# ===========================================
+!.bashrc
+!.bash_profile
+!.bash_logout
+!.zshrc
+!.p10k.zsh
+!.profile
+
+# ===========================================
+# Git Configuration
+# ===========================================
+!.gitconfig
+!.config/
+!.config/git/
+!.config/git/**
+
+# ===========================================
+# Hyprland & Wayland Compositor
+# ===========================================
+!.config/hypr/
+!.config/hypr/**
+
+!.config/waybar/
+!.config/waybar/**
+
+!.config/mako/
+!.config/mako/**
+
+!.config/swaync/
+!.config/swaync/**
+
+!.config/swaylock/
+!.config/swaylock/**
+
+# ===========================================
+# Launchers & Menus
+# ===========================================
+!.config/rofi/
+!.config/rofi/**
+
+!.config/wofi/
+!.config/wofi/**
+
+!.config/wlogout/
+!.config/wlogout/**
+
+!.dmenurc
+
+# ===========================================
+# Terminal Emulator
+# ===========================================
+!.config/alacritty/
+!.config/alacritty/**
+
+# ===========================================
+# Shell Alternative
+# ===========================================
+!.config/fish/
+!.config/fish/**
+
+# ===========================================
+# Color Schemes & Themes
+# ===========================================
+!.config/wal/
+!.config/wal/**
+
+!.config/gtk-3.0/
+!.config/gtk-3.0/**
+
+!.config/gtk-4.0/
+!.config/gtk-4.0/**
+
+!.config/qt5ct/
+!.config/qt5ct/**
+
+# ===========================================
+# System Monitoring & Utilities
+# ===========================================
+!.config/btop/
+!.config/btop/**
+
+!.config/fastfetch/
+!.config/fastfetch/**
+
+!.config/kanata/
+!.config/kanata/**
+
+# ===========================================
+# Font Configuration
+# ===========================================
+!.config/fontconfig/
+!.config/fontconfig/**
+
+# ===========================================
+# Autostart Applications
+# ===========================================
+!.config/autostart/
+!.config/autostart/**
+
+# ===========================================
+# EXPLICITLY IGNORE SENSITIVE FILES
+# (These should NEVER be committed)
+# ===========================================
+.ssh/
+.ssh/**
+.gnupg/
+.gnupg/**
+.wakatime.cfg
+.claude.json
+.bash_history
+.zsh_history
+*.pem
+*.key
+*_rsa
+*_ed25519
+*.env
+.env.*

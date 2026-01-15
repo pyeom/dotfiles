@@ -1,0 +1,53 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "auto"
+  },
+  "display": {
+    "separator": " > "
+  },
+  "modules": [
+    {
+      "type": "title"
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+
+    // SECTION 1: OS, Packages, Shell, WM
+    { "type": "os",         "key": "󰣇 " },
+    { "type": "packages",    "key": "󰏖 " },
+    { "type": "shell",      "key": " " },
+    { "type": "wm",         "key": " " },
+
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────────────────┤"
+    },
+
+    // SECTION 2: CPU, GPU, Display, Memory, Disk
+    { "type": "cpu",        "key": " " },
+    { "type": "gpu",        "key": "󰍹 " },
+    { "type": "display",    "key": "󰍹 " },
+    { "type": "memory",     "key": "󰍛 " },
+    { "type": "disk",       "key": " " },
+
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────────────────┤"
+    },
+
+    // SECTION 3: Theme, Font, Terminal, Terminal Font, Uptime
+    { "type": "theme",          "key": " " },
+    { "type": "font",           "key": " " },
+    { "type": "terminal",       "key": " " },
+    { "type": "terminalfont",   "key": " " },
+    { "type": "uptime",         "key": "󰔛 " },
+
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+(defcfg
+  process-unmapped-keys no
+)
+
+(defsrc
+  kp7 kp8 kp9
+  kp4 kp5 kp6
+  kp1 kp2 kp3
+  kp0
+)
+
+(deflayer base
+  1   w   2
+  a   s   d
+  3   4   5
+  lshift
+)

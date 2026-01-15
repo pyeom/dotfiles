@@ -1,0 +1,103 @@
+/*
+ * Dynamic Island Submenu Theme for Rofi
+ * For menus launched from the main dynamic island
+ */
+
+/* Load pywal colors */
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    border-width: 0px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+configuration {
+    font: "JetBrains Mono Nerd Font 11";
+    show-icons: false;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+/* ---- Window ---- */
+window {
+    width: 400px;
+    transparency: "real";
+    location: north;
+    anchor: north;
+    fullscreen: false;
+    enabled: true;
+    border-radius: 30px;
+    cursor: "default";
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    y-offset: 100px;  /* Below the main menu */
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    enabled: true;
+    orientation: vertical;
+    spacing: 15px;
+    background-color: transparent;
+    children: ["inputbar", "listview"];
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled: true;
+    spacing: 15px;
+    padding: 0px;
+    background-color: transparent;
+    text-color: @foreground;
+    children: ["textbox-prompt-colon"];
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+    str: "";
+    padding: 0px;
+    background-color: transparent;
+    text-color: @foreground;
+    font: "JetBrains Mono Nerd Font 12";
+    horizontal-align: 0.5;
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 5;
+    cycle: false;
+    dynamic: true;
+    scrollbar: false;
+    spacing: 8px;
+    background-color: transparent;
+}
+
+/* ---- Element ---- */
+element {
+    enabled: true;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-color: @foreground;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
