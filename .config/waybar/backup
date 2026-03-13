@@ -1,0 +1,162 @@
+{
+    "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        //"modules-left": ["custom/openmenu", "custom/notification","clock","custom/pacman","tray"],
+        //"modules-center": ["hyprland/workspaces"],
+        // "modules-right": ["group/server_menu_group", "cpu", "memory", "bluetooth","network","battery"],
+        //"modules-right": ["cpu", "memory", "bluetooth","network","battery"],
+        "modules-center": ["clock", "tray"],
+        "modules-left": ["custom/openmenu", "hyprland/workspaces"],
+        "modules-right": ["cpu", "memory", "bluetooth","network","battery"],
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4,5 ]
+            }
+        },
+
+        "custom/openmenu": {
+            "format": " 󰣇 ",
+            "tooltip": false,
+            "on-click": "$(pidof -q rofi) && pkill rofi || rofi -show drun"
+        },
+
+        "custom/notification": {
+            "tooltip": false,
+            "format": "  ",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+
+        "clock": {
+            "format": "{:%A - %B %d, %Y - %R} ",
+            "interval": 1,
+            "escape": true
+        },
+
+        "network": {
+            "format-wifi": "",
+            "format-ethernet":" ",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧",
+            "on-click": "nmtui"
+        },
+
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "󰂯 {device_battery_percentage}%",
+            "format-alt": "󰂯 {device_alias}",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager"
+        },
+
+        "battery": {
+            "interval":1,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{icon} {capacity}% ",
+            "format-charging": "󰂄 {capacity}%",
+            "format-plugged": "󰂄  {capacity}%",
+            "format-alt": "{time} {icon}",
+            "format-icons": [
+                "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ]
+        },
+
+        "custom/pacman": {
+            "format": "󰅢 {}",
+            "interval": 600,   
+            "exec": "checkupdates | wc -l",
+            "exec-if": "exit 0",
+            "on-click": "kitty sh -c 'yay; sudo pacman -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "signal": 8,
+            "tooltip": false
+        },
+
+        "custom/server_menu_toggle": {
+            "format": "  ",
+            "tooltip": true,
+            "tooltip-format": "Server Menu"
+        },
+
+        "group/server_menu_group": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 300,
+                "click-to-reveal": true,
+                "transition-to-left": true
+            },
+            "modules": ["custom/server_menu_toggle", "custom/serverstart", "custom/serverstop", "custom/ssh_to_server", "custom/start_vm"]
+        },
+
+        "custom/serverstart": {
+            "format": "  ",
+            "on-click": "~/.config/waybar/scripts/actions/turn_on_server.sh",
+            "tooltip-format": "Encender servidor Proxmox"
+        },
+
+        "custom/serverstop": {
+            "format": "  ",
+            "on-click": "~/.config/waybar/scripts/actions/turn_off_server.sh",
+            "tooltip-format": "Apagar servidor Proxmox"
+        },
+
+        "custom/ssh_to_server": {
+            "format": "  ",
+            "on-click": "~/.config/waybar/scripts/actions/ssh_to_server.sh",
+            "tooltip-format": "SSH al servidor Proxmox"
+        },
+
+        "custom/start_vm": {
+            "format": "  ",
+            "on-click": "~/.config/waybar/scripts/actions/start_vm.sh",
+            "tooltip-format": "Iniciar VM"
+        },
+
+        "custom/colorpicker": {
+            "format": "co {}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+        },
+
+        "cpu": {
+            "format": "󰻠 {usage}%",
+            "on-click": "kitty --class dotfiles-floating -e htop",
+            "tooltip": true
+        },
+
+        "memory": {
+            "format": " {}%",
+            "on-click": "kitty --class dotfiles-floating -e htop"
+        },
+        
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        }
+} 

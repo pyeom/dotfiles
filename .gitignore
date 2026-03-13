@@ -1,0 +1,14 @@
+# Ignore backup files
+*.bak
+*.backup
+*.swp
+*.tmp
+*~
+
+# Ignore generated/cache files
+.config/wal/colors*
+.config/wal/cache*
+
+# Ignore sensitive data
+.env
+secrets
