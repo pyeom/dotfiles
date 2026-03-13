@@ -1,0 +1,27 @@
+{
+    "layer": "overlay",
+    "position": "top",
+    "height": 40,
+    "margin-top": 38,
+    "exclusive": false,
+    "modules-center": ["mpris"],
+
+    "mpris": {
+        "format": "{player_icon} {status_icon} {dynamic}",
+        "format-paused": "{player_icon} {status_icon} {dynamic}",
+        "player-icons": {
+            "default": "󰝚",
+            "spotify": "󰓇",
+            "firefox": "󰈹"
+        },
+        "status-icons": {
+            "playing": "󰐊",
+            "paused": "󰏤",
+            "stopped": "󰓛"
+        },
+        "dynamic-order": ["title", "artist"],
+        "dynamic-separator": " - ",
+        "max-length": 50,
+        "on-click": "pkill -f 'waybar.*music-player-config'"
+    }
+}

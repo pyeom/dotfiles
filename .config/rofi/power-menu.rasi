@@ -1,0 +1,98 @@
+/*
+#  ____                          __  __
+# |  _ \ _____      _____ _ __  |  \/  | ___ _ __  _   _
+# | |_) / _ \ \ /\ / / _ \ '__| | |\/| |/ _ \ '_ \| | | |
+# |  __/ (_) \ V  V /  __/ |    | |  | |  __/ | | | |_| |
+# |_|   \___/ \_/\_/ \___|_|    |_|  |_|\___|_| |_|\__,_|
+#
+# -----------------------------------------------------
+*/
+
+/* --- Load pywal colors --- */
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+/* ---- Configuration ---- */
+configuration {
+    font:                       "JetBrains Mono Nerd Font Mono 12";
+    show-icons:                 false;
+    hover-select:               false;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+}
+
+/* ---- Window ---- */
+window {
+    width:                        200px;
+    x-offset:                     0px;
+    y-offset:                     65px;
+    spacing:                      0px;
+    padding:                      0px;
+    margin:                       0px;
+    border:                       2px;
+    border-color:                 rgba(255, 255, 255, 0.3);
+    cursor:                       "default";
+    transparency:                 "real";
+    location:                     north;
+    anchor:                       north;
+    fullscreen:                   false;
+    border-radius:                16px;
+    background-color:             transparent;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    enabled:                      true;
+    spacing:                      0px;
+    margin:                       0px;
+    padding:                      0px;
+    background-color:             @background;
+    children:                     ["listview"];
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled:                      true;
+    columns:                      1;
+    lines:                        5;
+    cycle:                        true;
+    dynamic:                      false;
+    scrollbar:                    false;
+    layout:                       vertical;
+    reverse:                      false;
+    fixed-height:                 true;
+    fixed-columns:                true;
+    spacing:                      0px;
+    padding:                      10px;
+    margin:                       0px;
+    background-color:             transparent;
+    border:                       0px;
+}
+
+/* ---- Element ---- */
+element {
+    enabled:                      true;
+    padding:                      12px 15px;
+    margin:                       4px 0px;
+    cursor:                       pointer;
+    background-color:             rgba(30, 30, 46, 0.7);
+    border-radius:                12px;
+    border:                       0px;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            rgba(137, 180, 250, 0.3);
+    text-color:                  @foreground;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}

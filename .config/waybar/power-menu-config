@@ -1,0 +1,38 @@
+{
+    "layer": "overlay",
+    "position": "top",
+    "height": 40,
+    "margin-top": 38,
+    "exclusive": false,
+    "modules-center": ["custom/shutdown", "custom/reboot", "custom/logout", "custom/suspend", "custom/lock"],
+
+    "custom/shutdown": {
+        "format": "⏻",
+        "tooltip-text": "Shutdown",
+        "on-click": "systemctl poweroff && pkill -f 'waybar.*power-menu-config'"
+    },
+
+    "custom/reboot": {
+        "format": "",
+        "tooltip-text": "Reboot",
+        "on-click": "systemctl reboot && pkill -f 'waybar.*power-menu-config'"
+    },
+
+    "custom/logout": {
+        "format": "󰗼",
+        "tooltip-text": "Logout",
+        "on-click": "hyprctl dispatch exit && pkill -f 'waybar.*power-menu-config'"
+    },
+
+    "custom/suspend": {
+        "format": "󰒲",
+        "tooltip-text": "Suspend",
+        "on-click": "systemctl suspend && pkill -f 'waybar.*power-menu-config'"
+    },
+
+    "custom/lock": {
+        "format": "󰌾",
+        "tooltip-text": "Lock",
+        "on-click": "hyprlock && pkill -f 'waybar.*power-menu-config'"
+    }
+}

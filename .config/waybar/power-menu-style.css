@@ -1,0 +1,60 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 18px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#custom-shutdown,
+#custom-reboot,
+#custom-logout,
+#custom-suspend,
+#custom-lock {
+    background: rgba(30, 30, 46, 0.95);
+    color: #ffffff;
+    padding: 5px 16px;
+    margin: 4px 0px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+/* First module - left rounded edge */
+#custom-shutdown {
+    border-radius: 16px 0 0 16px;
+    margin-left: 4px;
+}
+
+/* Last module - right rounded edge */
+#custom-lock {
+    border-radius: 0 16px 16px 0;
+    margin-right: 4px;
+}
+
+#custom-shutdown:hover {
+    background: rgba(243, 139, 168, 0.9);
+    color: #1e1e2e;
+}
+
+#custom-reboot:hover {
+    background: rgba(249, 226, 175, 0.9);
+    color: #1e1e2e;
+}
+
+#custom-logout:hover {
+    background: rgba(137, 180, 250, 0.9);
+    color: #1e1e2e;
+}
+
+#custom-suspend:hover {
+    background: rgba(166, 227, 161, 0.9);
+    color: #1e1e2e;
+}
+
+#custom-lock:hover {
+    background: rgba(203, 166, 247, 0.9);
+    color: #1e1e2e;
+}

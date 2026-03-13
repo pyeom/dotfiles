@@ -1,0 +1,24 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#mpris {
+    background: rgba(30, 30, 46, 0.95);
+    color: #ffffff;
+    padding: 5px 16px;
+    margin: 4px 8px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+#mpris:hover {
+    background: rgba(137, 180, 250, 0.9);
+    color: #1e1e2e;
+}
