@@ -11,7 +11,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/titan/.zshrc'
+zstyle :compinstall filename '/home/$USER/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -20,15 +20,15 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/titan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/$USER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 plugins=(git zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
 (cat ~/.cache/wal/sequences &)
 
-alias config="code /home/titan/.config"
+alias config="code /home/$USER/.config"
 
 # pnpm
-export PNPM_HOME="/home/titan/.local/share/pnpm"
+export PNPM_HOME="/home/$USER/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -36,7 +36,7 @@ esac
 # pnpm end
 
 # opencode
-export PATH=/home/titan/.opencode/bin:$PATH
+export PATH=/home/$USER/.opencode/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -57,7 +57,7 @@ autoload -Uz compinit && compinit
 
 
 # bun completions
-[ -s "/home/titan/.bun/_bun" ] && source "/home/titan/.bun/_bun"
+[ -s "/home/$USER/.bun/_bun" ] && source "/home/$USER/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
