@@ -16,11 +16,11 @@ zstyle :compinstall filename '/home/$USER/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/$USER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 plugins=(git zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
 (cat ~/.cache/wal/sequences &)
@@ -38,9 +38,7 @@ esac
 # opencode
 export PATH=/home/$USER/.opencode/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Android Studio / emulator path
 
@@ -62,3 +60,5 @@ autoload -Uz compinit && compinit
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk

@@ -5,7 +5,7 @@
     "spacing": 0,
     "modules-left": ["tray"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio#microphone", "pulseaudio", "custom/notifications"],
+    "modules-right": ["bluetooth", "network", "pulseaudio#microphone", "pulseaudio", "custom/notifications", "battery"],
 
     "clock": {
         "format": "{:%d/%m - %H:%M}",
@@ -31,8 +31,30 @@
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
     },
 
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "rotate": 0,
+        "format-connected-battery": "{icon}",
+        "format-icons": [
+            "󰤾",
+            "󰤿",
+            "󰥀",
+            "󰥁",
+            "󰥃",
+            "󰥅",
+            "󰥈",
+            "󰥇"
+        ],
+        "tooltip-format": "{icon} {device_alias} | {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected": "{device_enumerate} {num_connections}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_battery_percentage}%",
+        "on-click": "blueman-manager",
+        "interval": 1
+    },
+
     "network": {
-        "format-wifi": "{signalStrength}%",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-disconnected": "󰞃",
         "tooltip-format": "{ifname}: {ipaddr}",
@@ -78,8 +100,35 @@
     },
 
     "custom/notifications": {
-        "format": "󰂚 {count}",
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "format": "{icon} {text}",
+        "format-icons": {
+            "notification": "󰂚",
+            "none": "󰂜",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂜",
+            "inhibited-notification": "󰂚",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰂜"
+        },
         "on-click": "swaync-client -t -sw",
+        "escape": true,
         "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "rotate": 0,
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     }
 }

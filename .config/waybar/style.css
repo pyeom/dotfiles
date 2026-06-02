@@ -55,6 +55,7 @@ window#waybar {
 /* Right modules - combined pill styling */
 #cpu,
 #memory,
+#bluetooth,
 #network,
 #pulseaudio,
 #pulseaudio.microphone,
@@ -69,19 +70,20 @@ window#waybar {
 }
 
 /* First module in the group - left rounded edge */
-#network {
+#bluetooth {
     border-radius: 16px 0 0 16px;
     margin-left: 4px;
 }
 
 /* Last module in the group - right rounded edge */
-#custom-notifications {
+#battery {
     border-radius: 0 16px 16px 0;
     margin-right: 4px;
 }
 
 #cpu:hover,
 #memory:hover,
+#bluetooth:hover,
 #network:hover,
 #pulseaudio:hover,
 #pulseaudio.microphone:hover,

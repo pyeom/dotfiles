@@ -1,0 +1,23 @@
+#!/bin/sh
+exec wvkbd-deskintl \
+    --hidden \
+    -l full,special,cyrillic \
+    --landscape-layers full,special,cyrillic \
+    -H 350 \
+    -L 280 \
+    -R 6 \
+    --fn "Noto Sans 18" \
+    --alpha 255 \
+    --bg    "1a1a1a" \
+    --fg    "2e2e2e" \
+    --fg-sp "252525" \
+    --press    "4a4a4a" \
+    --press-sp "404040" \
+    --text          "e0e0e0" \
+    --text-sp       "b0b0b0" \
+    --text-press    "ffffff" \
+    --text-press-sp "ffffff" \
+    --swipe    "4a4a4a" \
+    --swipe-sp "404040" \
+    --text-swipe    "e0e0e0" \
+    --text-swipe-sp "b0b0b0"
